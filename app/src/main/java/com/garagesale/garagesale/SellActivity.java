@@ -4,9 +4,6 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -27,12 +24,10 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 
-public class Main2Activity extends AppCompatActivity {
+public class SellActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private Button takePicture;
     private int CAMERA_REQUEST = 200;
@@ -43,23 +38,27 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.sell_main);
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent i;
                 switch (item.getItemId()) {
                     case R.id.buy:
-                        Toast.makeText(Main2Activity.this, "Buy", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(SellActivity.this, "Buy", Toast.LENGTH_SHORT).show();
+                        i = new Intent(SellActivity.this, BuyActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.sell:
-                        Toast.makeText(Main2Activity.this, "Sell", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SellActivity.this, "Sell", Toast.LENGTH_SHORT).show();
+                        i = new Intent(SellActivity.this, SellActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.history:
-                        Toast.makeText(Main2Activity.this, "History", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(Main2Activity.this, HistoryActivity.class);
+                        Toast.makeText(SellActivity.this, "History", Toast.LENGTH_SHORT).show();
+                        i = new Intent(SellActivity.this, HistoryActivity.class);
                         startActivity(i);
                         break;
                 }
@@ -86,17 +85,17 @@ public class Main2Activity extends AppCompatActivity {
 
     private void loadCamera() {
 
-        ActivityCompat.requestPermissions(Main2Activity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+        ActivityCompat.requestPermissions(SellActivity.this, new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(Main2Activity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(SellActivity.this);
 
         builder.setPositiveButton("Take Picture", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 checkPermissions();
                 File file = new File(Environment.getExternalStorageDirectory(), "product.jpg");
-                Uri uri = FileProvider.getUriForFile(Main2Activity.this, "product.provider", file);
+                Uri uri = FileProvider.getUriForFile(SellActivity.this, "product.provider", file);
                 intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(intent, CAMERA_REQUEST);
 
@@ -124,7 +123,7 @@ public class Main2Activity extends AppCompatActivity {
         Uri imageUri = null;
         if (requestCode == CAMERA_REQUEST && resultCode == RESULT_OK) {
             File file = new File(Environment.getExternalStorageDirectory(), "product.jpg");
-            imageUri = FileProvider.getUriForFile(Main2Activity.this, "product.provider", file);
+            imageUri = FileProvider.getUriForFile(SellActivity.this, "product.provider", file);
             Log.e("i", "ran");
             //    profilePic.setImageURI(imageUri);
 
@@ -135,14 +134,14 @@ public class Main2Activity extends AppCompatActivity {
                 inputStream = getContentResolver().openInputStream(imageUri);
 
             } catch (FileNotFoundException e) {
-                Toast.makeText(Main2Activity.this, "Error opening profile picture!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SellActivity.this, "Error opening profile picture!", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             //profilePic.setImageBitmap(imageBitmap);
         }
         if (imageUri != null) {
-            Intent i = new Intent(Main2Activity.this, CameraActivity.class);
+            Intent i = new Intent(SellActivity.this, CameraActivity.class);
             Log.e("before start ", imageUri.toString());
             i.putExtra("data", imageUri);
             Log.e("mongystyle2", i.toString());
@@ -153,14 +152,14 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void checkPermissions() {
-        if (ContextCompat.checkSelfPermission(Main2Activity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(Main2Activity.this, new String[]{Manifest.permission.CAMERA}, 1);
+        if (ContextCompat.checkSelfPermission(SellActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(SellActivity.this, new String[]{Manifest.permission.CAMERA}, 1);
         }
-        if (ContextCompat.checkSelfPermission(Main2Activity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(Main2Activity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 2);
+        if (ContextCompat.checkSelfPermission(SellActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(SellActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 2);
         }
-        if (ContextCompat.checkSelfPermission(Main2Activity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(Main2Activity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 3);
+        if (ContextCompat.checkSelfPermission(SellActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(SellActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 3);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.garagesale.garagesale;
 
+import android.graphics.Color;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -135,7 +136,13 @@ public class CameraActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             System.out.println("click");
-            HistoryActivity.sold.add(name.getText() + " " + quality.getText() + " " + price.getText());
+            HistoryActivity.name.add((String) name.getText());
+            HistoryActivity.quality.add((String) quality.getText());
+            HistoryActivity.price.add((String) price.getText());
+            HistoryActivity.type.add("Sold: ");
+            sellButton.setText("Sold!");
+            sellButton.setBackgroundColor(Color.LTGRAY);
+            sellButton.setClickable(false);
         }
     };
 

@@ -1,19 +1,15 @@
 package com.garagesale.garagesale;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.app.*;
-import android.util.Log;
 import android.view.*;
 import android.text.*;
 import android.widget.*;
 import com.google.firebase.auth.*;
 import com.google.android.gms.tasks.*;
-import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonReg = findViewById(R.id.buttonRegister);
         buttonReg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                Intent i = new Intent(MainActivity.this, SellActivity.class);
                 startActivity(i);
             }
         });
