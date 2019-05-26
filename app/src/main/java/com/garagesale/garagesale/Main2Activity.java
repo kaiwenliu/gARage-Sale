@@ -95,7 +95,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 checkPermissions();
-                File file = new File(Environment.getExternalStorageDirectory(), "skinImage.jpg");
+                File file = new File(Environment.getExternalStorageDirectory(), "product.jpg");
                 Uri uri = FileProvider.getUriForFile(Main2Activity.this, "product.provider", file);
                 intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(intent, CAMERA_REQUEST);
@@ -143,16 +143,9 @@ public class Main2Activity extends AppCompatActivity {
         }
         if (imageUri != null) {
             Intent i = new Intent(Main2Activity.this, CameraActivity.class);
-            //Log.e("before start ", imageUri.toString());
-            Bitmap bitmap;
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+            Log.e("before start ", imageUri.toString());
             i.putExtra("data", imageUri);
-            Log.e("i", i.toString());
+            Log.e("mongystyle2", i.toString());
             startActivity(i);
         }
 

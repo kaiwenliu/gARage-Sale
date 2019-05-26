@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 
+import com.google.firebase.FirebaseApp;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
