@@ -18,27 +18,6 @@ public class QualityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quality);
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.buy:
-                        Toast.makeText(QualityActivity.this, "Buy", Toast.LENGTH_SHORT).show();
-
-                        break;
-                    case R.id.sell:
-                        Toast.makeText(QualityActivity.this, "Sell", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.history:
-                        Toast.makeText(QualityActivity.this, "History", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(QualityActivity.this, HistoryActivity.class);
-                        startActivity(i);
-                        break;
-                }
-                return true;
-            }
-        });
 
     }
 
