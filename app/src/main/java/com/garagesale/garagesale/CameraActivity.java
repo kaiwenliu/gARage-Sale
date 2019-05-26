@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import android.content.Intent;
@@ -44,12 +45,16 @@ public class CameraActivity extends AppCompatActivity {
     private TextView quality;
     private TextView price;
     private Uri imageUri;
+    private HashMap<String, String> prices;
     Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        prices = new HashMap<String, String>();
+        prices.put("Water Bottle", "$1.25");
+        prices.put("Soda", "$1.5");
         name = findViewById(R.id.textView3);
         quality = findViewById(R.id.textView4);
         price = findViewById(R.id.textView2);
@@ -101,7 +106,7 @@ public class CameraActivity extends AppCompatActivity {
                             Log.d("label!", String.valueOf(labels.get(0).getConfidence()));
                             name.setText(text);
                             quality.setText( (int)(5 * labels.get(0).getConfidence()) + "/5");
-                            price.setText("lol");
+                            price.setText(prices.get(text));
                         }
                     })
                             .addOnFailureListener(new OnFailureListener() {
