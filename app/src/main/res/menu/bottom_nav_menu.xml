@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
-
+        android:id="@+id/buy"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="@string/title_buy"
+        android:visible="true" />
     <item
         android:id="@+id/sell"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_sell" />
-
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="@string/title_sell"
+       android:visible="true" />
     <item
         android:id="@+id/history"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_history" />
-
-</menu>
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="@string/title_history"
+        android:visible="true" />
+    </menu>

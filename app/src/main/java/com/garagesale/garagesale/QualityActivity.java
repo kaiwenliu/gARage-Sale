@@ -12,41 +12,34 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+public class QualityActivity extends AppCompatActivity {
 
-public class HistoryActivity extends AppCompatActivity {
-
-    static ArrayList<String> bought;
-    static ArrayList<String> sold;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.history_main);
-
-
+        setContentView(R.layout.activity_quality);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Intent i;
                 switch (item.getItemId()) {
                     case R.id.buy:
-                        Toast.makeText(HistoryActivity.this, "Buy", Toast.LENGTH_SHORT).show();
-                        i = new Intent(HistoryActivity.this, Main2Activity.class);
-                        startActivity(i);
+                        Toast.makeText(QualityActivity.this, "Buy", Toast.LENGTH_SHORT).show();
+
                         break;
                     case R.id.sell:
-                        Toast.makeText(HistoryActivity.this, "Sell", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QualityActivity.this, "Sell", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.history:
-                        Toast.makeText(HistoryActivity.this, "History", Toast.LENGTH_SHORT).show();
-                        i = new Intent(HistoryActivity.this, HistoryActivity.class);
+                        Toast.makeText(QualityActivity.this, "History", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(QualityActivity.this, HistoryActivity.class);
                         startActivity(i);
                         break;
                 }
                 return true;
             }
         });
+
     }
 
 }
