@@ -1,10 +1,14 @@
 package com.garagesale.garagesale;
 
+<<<<<<< HEAD
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+=======
+import android.content.Intent;
+>>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,10 +28,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+=======
+import java.util.ArrayList;
+>>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
 
 public class Main2Activity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -36,43 +44,34 @@ public class Main2Activity extends AppCompatActivity {
     private int GALLERY_REQUEST = 201;
     private int REQUEST_CANCELLED = -1;
 
-    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.sell:
-                    mTextMessage.setText("Sell");
-                    return true;
-                case R.id.history:
-                    mTextMessage.setText("lmao bad");
-                    return true;
-            }
-            return false;
-        }
-    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d("listener","l");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+<<<<<<< HEAD
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+=======
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+>>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.home:
+                    case R.id.buy:
+                        Toast.makeText(Main2Activity.this, "Buy", Toast.LENGTH_SHORT).show();
+
                         break;
                     case R.id.sell:
-                        // do something
+                        Toast.makeText(Main2Activity.this, "Sell", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.history:
-                        setContentView(R.layout.history_main);
+                        Toast.makeText(Main2Activity.this, "History", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(Main2Activity.this, HistoryActivity.class);
+                        startActivity(i);
                         break;
                 }
                 return true;
@@ -84,22 +83,9 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-
-
-//        final Button sell = findViewById(R.id.sell);
-//        sell.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                // do something
-//            }
-//        });
-//
-//        final Button history = findViewById(R.id.history);
-//        history.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-//                setContentView(R.layout.history_main);
-//            }
-//        });
     }
+
+
 
     private View.OnClickListener takePictureOnClick = new View.OnClickListener() {
         @Override
