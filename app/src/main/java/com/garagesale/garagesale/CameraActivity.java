@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,6 +31,7 @@ public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("d","ddd");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
@@ -80,7 +82,7 @@ public class CameraActivity extends AppCompatActivity {
                 }
             }, 3000);   //5 s
 
-            startActivity(new Intent(CameraActivity.this, Diagnosis.class));
+            startActivity(new Intent(CameraActivity.this, QualityActivity.class));
 
 
         }

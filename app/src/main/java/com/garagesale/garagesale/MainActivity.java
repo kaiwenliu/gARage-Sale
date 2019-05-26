@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Button;
@@ -48,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonReg = findViewById(R.id.buttonRegister);
         buttonReg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                setContentView(R.layout.activity_main2);
+                Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(i);
             }
         });
 

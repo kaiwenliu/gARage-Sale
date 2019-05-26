@@ -7,6 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".Main2Activity">
 
+    <Button
+        android:id="@+id/takePictureButton"
+        android:layout_width="198dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="156dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/peach"
+        android:fontFamily="sans-serif-thin"
+        android:text="take picture"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
