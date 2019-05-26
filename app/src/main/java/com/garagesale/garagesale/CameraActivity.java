@@ -31,7 +31,6 @@ public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("d","ddd");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 

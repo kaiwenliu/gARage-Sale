@@ -42,11 +42,8 @@ public class Main2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("listener","l");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -98,7 +95,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int id) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 checkPermissions();
-                File file = new File(Environment.getExternalStorageDirectory(), "productImage.jpg");
+                File file = new File(Environment.getExternalStorageDirectory(), "skinImage.jpg");
                 Uri uri = FileProvider.getUriForFile(Main2Activity.this, "product.provider", file);
                 intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(intent, CAMERA_REQUEST);

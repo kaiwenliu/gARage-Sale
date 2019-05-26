@@ -12,11 +12,11 @@
         android:enabled="true"
         android:icon="@android:drawable/ic_menu_gallery"
         android:title="@string/title_sell"
-        android:visible="true" />
+       android:visible="true" />
     <item
         android:id="@+id/history"
         android:enabled="true"
         android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/title_history"
         android:visible="true" />
-</menu>
+    </menu>
