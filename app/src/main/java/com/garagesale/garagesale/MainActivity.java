@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.sell:
+                    mTextMessage.setText(R.string.title_sell);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.history:
+                    mTextMessage.setText(R.string.title_home);
                     return true;
             }
             return false;
@@ -43,19 +43,14 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        final Button a = findViewById(R.id.button);
-        a.setOnClickListener(new View.OnClickListener() {
+
+        final Button buttonReg = findViewById(R.id.buttonRegister);
+        buttonReg.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                a.setBackgroundColor(Color.RED);
+                setContentView(R.layout.activity_main2);
             }
         });
 
-        final Button b = findViewById(R.id.button2);
-        b.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                b.setBackgroundColor(Color.GREEN);
-            }
-        });
 
     }
 
