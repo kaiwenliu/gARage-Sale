@@ -65,17 +65,21 @@ public class CameraActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent i;
                 switch (item.getItemId()) {
                     case R.id.buy:
                         Toast.makeText(CameraActivity.this, "Buy", Toast.LENGTH_SHORT).show();
-
+                        i = new Intent(CameraActivity.this, BuyActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.sell:
                         Toast.makeText(CameraActivity.this, "Sell", Toast.LENGTH_SHORT).show();
+                        i = new Intent(CameraActivity.this, SellActivity.class);
+                        startActivity(i);
                     break;
                     case R.id.history:
                         Toast.makeText(CameraActivity.this, "History", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(CameraActivity.this, HistoryActivity.class);
+                        i = new Intent(CameraActivity.this, HistoryActivity.class);
                         startActivity(i);
                         break;
                 }
