@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -39,6 +40,9 @@ public class CameraActivity extends AppCompatActivity {
 
 
     private ImageView loadedImage;
+    private TextView name;
+    private TextView quality;
+    private TextView price;
     private Uri imageUri;
     Bitmap bitmap;
 
@@ -46,6 +50,9 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        name = findViewById(R.id.textView3);
+        quality = findViewById(R.id.textView4);
+        price = findViewById(R.id.textView2);
         FirebaseApp.initializeApp(CameraActivity.this);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -91,7 +98,10 @@ public class CameraActivity extends AppCompatActivity {
                         public void onSuccess(List<FirebaseVisionImageLabel> labels) {
                             // Task completed successfully
                             String text = labels.get(0).getText();
-                            Log.d("label!",text);
+                            Log.d("label!", String.valueOf(labels.get(0).getConfidence()));
+                            name.setText(text);
+                            quality.setText( (int)(5 * labels.get(0).getConfidence()) + "/5");
+                            price.setText("lol");
                         }
                     })
                             .addOnFailureListener(new OnFailureListener() {

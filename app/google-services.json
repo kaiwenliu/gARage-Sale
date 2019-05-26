@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "38819428266",
+    "firebase_url": "https://garage-sale-d3171.firebaseio.com",
+    "project_id": "garage-sale-d3171",
+    "storage_bucket": "garage-sale-d3171.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38819428266:android:822c9cc96a8d810a",
+        "android_client_info": {
+          "package_name": "com.garagesale.garagesale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38819428266-ihjtofq3rp3a6pesi2d0h475ddovqigj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_lNfaLVx2VhhQprKdBZlM39-zeGc_sEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38819428266-ihjtofq3rp3a6pesi2d0h475ddovqigj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
