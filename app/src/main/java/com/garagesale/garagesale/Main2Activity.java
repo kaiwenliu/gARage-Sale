@@ -1,14 +1,11 @@
 package com.garagesale.garagesale;
 
-<<<<<<< HEAD
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-=======
 import android.content.Intent;
->>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,14 +25,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-<<<<<<< HEAD
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-=======
 import java.util.ArrayList;
->>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
+
 
 public class Main2Activity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -50,14 +45,11 @@ public class Main2Activity extends AppCompatActivity {
         Log.d("listener","l");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-<<<<<<< HEAD
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-=======
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
->>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {

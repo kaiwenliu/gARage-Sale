@@ -4,8 +4,6 @@
     <string name="title_sell">Sell</string>
     <string name="title_history">History</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <color name="background_color">#d1f1ea</color>
-    <color name="white">#ffffff</color>
     <string name="title_activity_main3">Main3Activity</string>
     <string name="title_activity_quality">QualityActivity</string>
 </resources>

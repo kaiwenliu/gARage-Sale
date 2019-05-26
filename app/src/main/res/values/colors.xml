@@ -6,4 +6,5 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="peach">#FFDAB9</color>
+    <color name="background_color">#d1f1ea</color>
 </resources>

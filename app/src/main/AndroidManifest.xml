@@ -16,14 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity
             android:name=".QualityActivity"
             android:label="@string/title_activity_quality"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".CameraActivity" />
-=======
->>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
         <activity
             android:name=".HistoryActivity"
             android:label="@string/title_activity_main3"
@@ -50,8 +47,6 @@
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="label" />
-
-<<<<<<< HEAD
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="product.provider"
@@ -61,8 +56,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-=======
->>>>>>> eb69598671e4056c75c8ee1dc925cc905a296388
     </application>
 
 </manifest>
