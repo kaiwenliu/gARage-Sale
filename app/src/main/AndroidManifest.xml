@@ -16,7 +16,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ARActivity"></activity>
         <activity
             android:name=".HistoryActivity"
             android:label="@string/title_activity_main3"
@@ -43,10 +42,7 @@
         <meta-data
             android:name="com.google.firebase.ml.vision.DEPENDENCIES"
             android:value="label" />
-<<<<<<< HEAD
-=======
 
->>>>>>> 09d1f7701aeab59b8c6ba0311c7991a7b7802b91
     </application>
 
 </manifest>
