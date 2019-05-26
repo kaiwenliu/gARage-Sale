@@ -1,5 +1,7 @@
 package com.garagesale.garagesale;
 
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,10 +14,12 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -24,20 +28,35 @@ public class CameraActivity extends AppCompatActivity {
 
 
     private ImageView loadedImage;
-    private Button analyzeImageButton;
     private Uri imageUri;
-    private ProgressBar progressBar;
     Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.buy:
+                        Toast.makeText(CameraActivity.this, "Buy", Toast.LENGTH_SHORT).show();
 
-        analyzeImageButton = findViewById(R.id.analyzeImageButton);
+                        break;
+                    case R.id.sell:
+                        Toast.makeText(CameraActivity.this, "Sell", Toast.LENGTH_SHORT).show();
+                    break;
+                    case R.id.history:
+                        Toast.makeText(CameraActivity.this, "History", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(CameraActivity.this, HistoryActivity.class);
+                        startActivity(i);
+                        break;
+                }
+                return true;
+            }
+        });
         loadedImage = findViewById(R.id.analyzeImageView);
-        progressBar = findViewById(R.id.progress_bar);
-        progressBar.setIndeterminate(true);
 
         Intent pictureIntent = getIntent();
 
@@ -58,8 +77,6 @@ public class CameraActivity extends AppCompatActivity {
                 }
             });
 
-            analyzeImageButton.setOnClickListener(analyzeOnClick);
-            // Bitmap bitmap = loadedImage.getDrawable().getBit
 
 
         }
@@ -67,25 +84,6 @@ public class CameraActivity extends AppCompatActivity {
 
     }
 
-    private View.OnClickListener analyzeOnClick = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-
-
-            //new ClassifierAsync(progressBar, CameraActivity.this).execute(bitmap);
-            progressBar.setVisibility(ProgressBar.VISIBLE);
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-                    progressBar.setVisibility(ProgressBar.INVISIBLE);
-                }
-            }, 3000);   //5 s
-
-            startActivity(new Intent(CameraActivity.this, QualityActivity.class));
-
-
-        }
-    };
 
 
 }
