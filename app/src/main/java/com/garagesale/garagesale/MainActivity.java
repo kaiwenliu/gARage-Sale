@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         textViewSignin = (TextView) findViewById(R.id.textViewSignin);
 
-        buttonRegister.setOnClickListener(this);
-        textViewSignin.setOnClickListener(this);
+        //buttonRegister.setOnClickListener(this);
+        //textViewSignin.setOnClickListener(this);
 
         final Button buttonReg = findViewById(R.id.buttonRegister);
         buttonReg.setOnClickListener(new View.OnClickListener() {
