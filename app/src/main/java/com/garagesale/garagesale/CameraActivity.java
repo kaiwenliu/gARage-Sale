@@ -45,6 +45,7 @@ public class CameraActivity extends AppCompatActivity {
     private TextView quality;
     private TextView price;
     private Uri imageUri;
+    private Button sellButton;
     private HashMap<String, String> prices;
     Bitmap bitmap;
 
@@ -124,11 +125,19 @@ public class CameraActivity extends AppCompatActivity {
             });
 
 
-
+            sellButton = findViewById(R.id.sellbutton);
+            sellButton.setOnClickListener(sellOnClick);
         }
 
 
     }
+    private View.OnClickListener sellOnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            System.out.println("click");
+            HistoryActivity.sold.add(name.getText() + " " + quality.getText() + " " + price.getText());
+        }
+    };
 
 
 

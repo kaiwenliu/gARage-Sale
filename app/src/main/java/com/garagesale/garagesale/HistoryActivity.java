@@ -16,13 +16,12 @@ import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {
 
-    static ArrayList<String> bought;
-    static ArrayList<String> sold;
+    public static ArrayList<String> bought = new ArrayList<String>();
+    public static ArrayList<String> sold = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history_main);
-
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
